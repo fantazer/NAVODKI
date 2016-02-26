@@ -16,3 +16,249 @@ wraper
 
 body
 	font-family 'Noto Sans'
+	color textcolor
+a
+	text-decoration none
+
+
+
+.main-cont
+	min-width 1280px
+	position relative
+.top-menu
+	height 80px
+	background maingreen
+	flex(between)
+	padding 0 30px
+	position fixed
+	width 100%
+	top 0
+.top-menu-logo
+	width 0
+
+
+.top-menu-el
+	color white
+	font-family "Noto Sans"
+	font-size 19px
+	font-weight bold
+	line-height 24px
+	margin-right 100px
+	position relative
+	&:hover
+		text-decoration underline
+	&:after
+		content ''
+		position absolute
+		width 1px
+		height 15px
+		background white
+		right -50px
+		top 7px
+	&:last-child
+		&:after
+			content ''
+			width 0
+
+.top-menu-left
+	flex(mid)
+	justify-content flex-start
+.top-menu-right
+	flex(mid)
+	justify-content flex-end
+.top-menu-right-img
+	margin-right 30px
+.top-menu-right-number
+	color white
+	font-family "Noto Sans"
+	font-size 19px
+	font-weight 700
+	line-height 24px
+	
+.section-main
+	width 100%
+	height 100vh
+	bgi('bg-section-main.png')
+	background-size cover
+	background-position top center
+	
+	
+.section-main
+	padding-top 80px
+	flex(mid)
+	flex-flow column
+	justify-content flex-start
+.section-main-logo
+	margin-top 25px
+	margin-bottom 25px
+.section-main-title
+	flex(mid)
+	margin-bottom 20px
+.section-main-title-black
+	font-family "Noto Sans"
+	font-size 30px
+	font-weight 700
+	line-height 24px
+	color #293437
+.section-main-title-number
+	margin 0 15px
+	span.section-main-title-number-el
+		width 42px
+		height 60px
+		display inline-block
+		color #333
+		font-size 47px
+		font-weight 700
+		line-height 35px
+		text-align center
+		margin-right 5px
+		position relative
+		z-index 10
+		bgi('number-user.png')
+		text-align center
+		line-height 45px
+		position relative
+		&:after
+			content ''
+			height 2px
+			width 100%
+			background #D8D8D8
+			top 40%
+			position absolute
+			left 0
+			
+			
+.section-main-title-whtie
+	color white
+	font-family "Noto Sans"
+	font-size 30px
+	font-weight 700
+	line-height 24px
+.section-main-video
+	border-radius 20px
+	width 45%
+	height 45%
+	border 10px solid white
+	border-radius 40px
+	margin-bottom 50px
+	position relative
+	overflow hidden
+	z-index 2000
+	img
+		position absolute
+		top 50%
+		left 50%
+		margin-top -71px
+		margin-left -71px
+		z-index 20
+		&:hover
+			cursor pointer
+
+.section-main-video-filter
+	opacity 0.8
+	background-color black
+	border-radius 20px
+	width 45%
+	height 45%
+	background-color #000
+	position absolute
+	width 100%
+	height 100%
+	z-index 10
+.section-main-form
+	input
+		background none
+		border 0px
+		min-width 300px
+		padding 10px
+		border 1px solid white!important
+		border-radius 5px
+		outline none
+		color white
+
+input[placeholder]
+	text-overflow:ellipsis
+	font-family "Noto Sans"
+	font-size 14px
+	font-style italic
+	line-height 24px
+input::-moz-placeholder
+	text-overflow:ellipsis
+	font-family "Noto Sans"
+	font-size 14px
+	font-style italic
+	line-height 24px 
+input:-moz-placeholder
+	text-overflow:ellipsis
+	font-family "Noto Sans"
+	font-size 14px
+	font-style italic
+	line-height 24px 
+input:-ms-input-placeholder 
+	text-overflow:ellipsis
+	font-family "Noto Sans"
+	font-size 14px
+	font-style italic
+	line-height 24px
+input:-moz-placeholder
+	color white
+input::-webkit-input-placeholder
+	color white
+.section-main-form-title
+	text-shadow 2px 3.5px 2px rgba(0, 0, 0, 0.42)
+	color white
+	font-family "Noto Sans"
+	font-size 22px
+	font-weight 700
+	line-height 24px
+	margin-bottom 15px
+
+.section-main-sale-but
+	background-color #fecc00
+	border-radius 10px
+	padding 15px 60px
+	color textcolor
+	font-family "Noto Sans"
+	font-size 18px
+	font-weight 700
+	line-height 24px
+	display inline-block
+	position absolute
+	top 110px
+	right 30px
+
+.introVideo
+	position absolute
+	width 100%
+	height 100%
+	z-index 5
+
+.section-main-form-rule
+	margin-top 15px
+	text
+		color white
+		font-family "Noto Sans"
+		font-size 14px
+		font-weight 400
+		line-height 24px
+		a
+			color white
+			text-decoration underline
+
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:25px;
+    height:25px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    bgi('Check-box.png')
+    cursor:pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+    bgi('Check-box-ckeck.png')
+}

@@ -9,6 +9,25 @@
  })(jQuery);*/ 
 
 $(document).ready(function(){
+	var numberUser = $('.section-main-title-number').text();
+	var arrNumber = [];
+	for (var i = 0; i < numberUser.length; i++) {
+    arrNumber[i] = numberUser.charAt(i);
+	}
+	$('.section-main-title-number').empty();
+	arrNumber.forEach(function(item){
+		$('.section-main-title-number')
+		.append('<span class="section-main-title-number-el">'+item+ ' </span>')
+	})
+
+
+	$('.section-main-video').on('click', function(ev) {
+ 
+    $(".introVideo")[0].src += "&autoplay=1";
+    ev.preventDefault();
+ 		$('.section-main-video img').hide();
+ 		$('.section-main-video-filter').hide();
+  });
 	/* ###### init bpopup  ######*/
 	/* ###### bower i bpopup  ######*/
 	// $('.button-modal').click(function(){

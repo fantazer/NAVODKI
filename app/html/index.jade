@@ -3,12 +3,43 @@ html(lang="en")
 	//Include header
 	include ./block_html/head.jade
 body
-	wraper
-		header
-		.main-news
-			- for (var x = 0; x <2; x++)
-				.main-news-items
-					.main-news-items-title Новая статья!!!
-					.main-news-items-text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores totam reiciendis magnam veritatis maiores, ipsa molestiae quidem, iure accusamus dicta, reprehenderit? Voluptatibus, corporis sunt velit ullam. Sequi magni, repellendus voluptatem!
+	.main-cont
+		//top-menu
+		.top-menu
+			.top-menu-left
+				.top-menu-logo
+					img(src="img/logo-small.png", alt="")
+				a(href="#").top-menu-el О нас
+				a(href="#").top-menu-el Тарифы
+				a(href="#").top-menu-el Обратная связь
+			.top-menu-right
+				.top-menu-right-img
+					img(src="img/icon-phone.png", alt="")
+				.top-menu-right-number 8 800 500 61 41
+		
+		//section-main
+		.section-main
+			.section-main-logo
+				img(src="img/logo-big.png", alt="")
+			.section-main-title
+				.section-main-title-black С нами уже
+				.section-main-title-number 3782123
+				.section-main-title-whtie пользователей
+			.section-main-video
+				.section-main-video-filter
+				img(src="img/icon-play.png", alt="")
+				//iframe(src="https://www.youtube.com/embed/yCR1iXLEyBY?&controls=0&rel=0&showinfo=0" ).introVideo
+			
+			.section-main-form
+				.section-main-form-title Бесплатный доступ!
+				form(action="#")
+					input(type="text" placeholder="Введите электронную почту")
+					.section-main-form-rule
+						input(type="checkbox" id="r1" name="rr")
+						label(for="r1")
+							span
+							text Я принимаю 
+								a(href="#") правила сервиса
+			a(href="").section-main-sale-but Акции
 	//Include Footer
 	include ./block_html/script.jade
