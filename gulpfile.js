@@ -137,7 +137,7 @@ gulp.task('include',function(){
 // ########## make service###############
 //copy file
 gulp.task('copy:font',function(){
-  return gulp.src('./app/fonts/')
+  return gulp.src('./app/fonts/**.*')
          .pipe(gulp.dest('./dist/fonts/'))
   })
 
