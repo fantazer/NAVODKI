@@ -23,11 +23,12 @@ $(document).ready(function(){
 	})
 
 
-	$('.section-view').css('height',$(window).height())
-	$(window).resize(function(){
-		$('.section-view').css('height',$(window).height())
-	});
-
+	// $('.section-view').css('height',$(window).height())
+	// $(window).resize(function(){
+	// 	$('.section-view').css('height',$(window).height())
+	// });
+	console.log($(window).height()	)
+	console.log($(window).width()	)
 	var numberUserBlock = function(a){
 		var numberUser = $(a).text();
 		var arrNumber = [];
@@ -63,7 +64,7 @@ numberUserBlock('.section-about-number');
 
 	//Tooltip
 	$('.section-time-quote-bottom-link').click(function(){
-		$('.section-time-quote-tooltip').toggleClass('hidden');
+		$('.section-time-quote-tooltip-wraper').toggleClass('hidden');
 	})
 	/* ###### init bpopup  ######*/
 	/* ###### bower i bpopup  ######*/

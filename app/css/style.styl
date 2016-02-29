@@ -24,19 +24,19 @@ input
 	outline:none
 
 .hidden
-	visibility hidden
+	display none
 .visible
 	visibility visible
 
 .section-view
 	min-width: 100%;
-	min-height: 100vh;
+	//min-height: 100vh;
 	position: relative;
 .main-cont
 	min-width 1280px
 	position relative
 .top-menu
-	height 80px
+	height 60px
 	background maingreen
 	flex(between)
 	padding 0 30px
@@ -90,7 +90,7 @@ input
 	
 .section-main
 	width 100%
-	height 100vh
+	//height 100vh
 	bgi('bg-section-main.jpg')
 	background-size cover
 	background-position center top
@@ -102,9 +102,12 @@ input
 	flex-flow column
 	justify-content flex-start
 .section-main-logo
-	margin-top 25px
+	margin-top 0px
 	margin-bottom 25px
+	width 15%
 .section-main-title
+	+below(1440px)
+			margin-bottom 10px	
 	flex(mid)
 	margin-bottom 20px
 .section-main-title-black
@@ -116,6 +119,12 @@ input
 .section-main-title-number
 	margin 0 15px
 	span.section-main-title-number-el
+		+below(1440px)
+			background-size cover
+			width 35px
+			height 48px
+			font-size 32px
+			line-height 40px	
 		width 42px
 		height 60px
 		display inline-block
@@ -131,6 +140,7 @@ input
 		text-align center
 		line-height 45px
 		position relative
+		
 		&:after
 			content ''
 			height 2px
@@ -148,6 +158,8 @@ input
 	font-weight 700
 	line-height 24px
 .section-main-video
+	+below(1440px)
+		height 60%	
 	border-radius 20px
 	width 45%
 	height 45%
@@ -180,6 +192,9 @@ input
 	z-index 10
 .section-main-form
 	margin-bottom 50px
+	margin-top -35px	
+	+below(1440px)
+		margin-top -40px	
 	input
 		background none
 		border 0px
@@ -190,6 +205,8 @@ input
 		outline none
 		color white
 	button
+		+below(1440px)
+			height 35px	
 		margin-top 15px
 		background yellow
 		border 0px
@@ -235,6 +252,9 @@ input:-moz-placeholder
 input::-webkit-input-placeholder
 	color white
 .section-main-form-title
+	+below(1440px)
+		font-size 18px
+		margin-bottom 5px	
 	text-shadow 2px 3.5px 2px rgba(0, 0, 0, 0.42)
 	color white
 	font-family "Noto Sans"
@@ -335,23 +355,40 @@ input[type="checkbox"]:checked + label span {
 	
 //.section-adv
 .section-adv-el
+	+below(1440px)
+		padding 10px	
 	span(1/5)
+	width 19%
 	position relative
-	min-height 100%
+	height 100%
 	padding 25px
 	background-size cover!important
 	position relative
+	
 	&:hover
 		img
 			-webkit-filter none
 			filter none
 			filter none
 			filter none
+.section-adv-el-first
+	width 24%
+	padding-left 6%
+	.section-adv-el-footer
+		margin-left -25%
+	.section-adv-el-title
+		+below(1440px)
+				margin-top 100px
+				padding-left 5%	
+		
 .section-adv-el-title
-	margin-top 145px
+	+below(1440px)
+			margin-top 100px
+	margin-top 140px
 	flex(between)
-	height 130px
+	height 80px
 .section-adv-el-title-text
+	
 	color #293437
 	font-family "Noto Sans"
 	font-size 24px
@@ -367,18 +404,21 @@ input[type="checkbox"]:checked + label span {
 	margin-bottom 40px
 	p
 		font-family "Noto Sans"
-		font-size 14px
+		font-size 12px
 		font-weight 400
-		line-height 24px
+		line-height 20px
 		+below(1600px)
-			font-size: 14px;
+			font-size: 12px;
 			font-weight: 400;
 			line-height: 20px;
 		+below(1500px)
 			font-size: 12px;
 			font-weight: 400;
 			line-height: 18px;
-		
+		+below(1440px)
+				font-size 10px
+				margin 0px
+				margin-bottom 3px
 .section-adv-el-img
 	img
 		width 100%
@@ -388,9 +428,10 @@ input[type="checkbox"]:checked + label span {
 		-webkit-filter: grayscale(100%);
 		filter: gray;
 		filter: grayscale(100%);
-		filter: url(/img/desaturate.svg#dark);
+		//filter: url(/img/desaturate.svg#dark);
 		
 .section-adv-el-but
+		
 	width 60%
 	display inline-block
 	tr(all)
@@ -408,6 +449,8 @@ input[type="checkbox"]:checked + label span {
 	width 100%
 	flex mid
 	a
+		+below(1440px)
+			width 90%	
 		width 80%
 		display inline-block
 		background #FFC730
@@ -430,9 +473,10 @@ input[type="checkbox"]:checked + label span {
 	font-weight 700
 	line-height 24px
 	left 65px
-	top 120px
+	top 100px
 	+below(1400px)
 		font-size 36px
+		top 80px
 		
 .section-about
 	width 100%
@@ -459,6 +503,7 @@ input[type="checkbox"]:checked + label span {
 		text-align center
 		line-height 45px
 		position relative
+		
 		&:after
 			content ''
 			height 2px
@@ -476,6 +521,7 @@ input[type="checkbox"]:checked + label span {
 	flex(mid)
 .section-about-users-left
 	margin-right 45px
+	width 8%	
 .section-about-users-rigth
 	flex(mid)
 	flex-flow column
@@ -488,9 +534,11 @@ input[type="checkbox"]:checked + label span {
 	line-height 60px
 	
 .section-about-slider
+	+below(1440px)
+			margin-top 30px	
 	background maingreen
 	margin-top 75px
-	padding 5% 0px
+	padding 2% 0px
 	opacity .9
 	
 .section-about-slider-wrap
@@ -515,14 +563,17 @@ input[type="checkbox"]:checked + label span {
 	+below(1400px)
 		font-size 46px
 .section-about-slider-el-text
+	+below(1800px)
+		line-height 26px;
+	+below(1440px)
+		font-size 14px	
 	color white
 	font-family "Noto Sans"
 	font-size 18px
 	font-weight 700
 	text-align center
 	line-height 36px
-	+below(1800px)
-		line-height 26px;
+	
 .owl-prev,
 .owl-next
 	position absolute
@@ -565,6 +616,8 @@ input[type="checkbox"]:checked + label span {
 	background-size: cover;
 
 .section-final
+	+below(1440px)
+		padding-top 80px	
 	position relative
 	padding-top 160px
 	
@@ -581,10 +634,14 @@ input[type="checkbox"]:checked + label span {
 			font-weight 400
 
 .section-final-sloganSecond
+	+below(1440px)
+		margin-top 40px
 	padding-left 10%
 	margin-top 80px
 	div
 		&:nth-child(1)
+			+below(1440px)
+				font-size 68px
 			color #f22323
 			font-family "Noto Sans"
 			font-size 72px
@@ -593,6 +650,8 @@ input[type="checkbox"]:checked + label span {
 			text-transform uppercase
 		
 		&:nth-child(2)
+			+below(1440px)
+				font-size 34px
 			color #293437
 			font-family "Noto Sans"
 			font-size 48px
@@ -618,17 +677,21 @@ input[type="checkbox"]:checked + label span {
 //.section-final-footer-right
 
 .section-final-form-wrap
+	+below(1440px)
+		margin-top 50px	
 	width 100%
 	flex(mid)
 	margin-top 100px
 	
 .section-time
+	+below(1440px)
+		padding-top 110px	
 	width 100%
 	height 100vh
 	bgi('bg-section-service.jpg')
 	background-size cover
 	background-position: center top
-	padding-top 140px
+	padding-top 130px 
 	position relative
 	color black
 .section-time-topTitle
@@ -637,9 +700,12 @@ input[type="checkbox"]:checked + label span {
 	font-weight 700
 	line-height 24px
 	position absolute
-	top 90px
+	top 70px
 	right 30px
 .section-time-mainTitle
+	+below(1440px)
+		font-size 24px
+		margin-bottom 20px	
 	color white
 	font-family "Noto Sans"
 	font-size 42px
@@ -660,6 +726,8 @@ input[type="checkbox"]:checked + label span {
 		font-size 24px
 	margin 0 auto
 .section-time-elWraper
+	+below(1440px)
+		margin-top 20px	
 	margin-top 55px
 	flex(mid)
 	padding 0 5%
@@ -690,13 +758,15 @@ input[type="checkbox"]:checked + label span {
 .section-time-form-wrap
 	width 100%
 	flex(mid)
-	margin-top 50px 
+	margin-top 80px 
 	+below(1600px)
 		margin-top 20px
 .section-time-quote
+	+below(1440px)
+		bottom 20%
 	position absolute
 	left 80px
-	bottom 2%
+	bottom 25%
 	width 290px
 .section-time-quote-wrap
 	position relative
@@ -708,6 +778,8 @@ input[type="checkbox"]:checked + label span {
 		bgi('quotes.png')
 		left -60px
 .section-time-quote-top
+	+below(1440px)
+		font-size 12px	
 	color white
 	font-family "Noto Sans"
 	font-size 18px
@@ -734,7 +806,11 @@ input[type="checkbox"]:checked + label span {
 	font-size 24px
 	font-weight 700
 	line-height 24px
+.section-time-quote-tooltip-wraper
+	position absolute	
 .section-time-quote-tooltip
+	+below(1440px)
+		padding 5px 10px
 	width 1080px
 	padding 15px
 	background black
@@ -749,6 +825,10 @@ input[type="checkbox"]:checked + label span {
 		top -10px
 		left 40px
 	p
+		+below(1440px)
+			font-size 10px
+			margin 0	
+			margin-bottom 3px	
 		color white
 		font-family "Noto Sans"
 		font-size 12px
@@ -768,6 +848,8 @@ input[type="checkbox"]:checked + label span {
 .section-lider-topQuote
 	+below(1600px)
 		top 8%
+	+below(1440px)
+		top 12%
 	left: 50%;
 	top: 12%;
 	margin-left: -80px;
@@ -789,6 +871,9 @@ input[type="checkbox"]:checked + label span {
 	+below(1600px)
 		font-size 30px
 		margin-top 0
+	+below(1440px)
+		font-size 30px
+		margin-top 10%
 	text-shadow 2px 3.5px 2px rgba(0, 0, 0, 0.42)
 	color white
 	font-family "Noto Sans"
@@ -798,12 +883,16 @@ input[type="checkbox"]:checked + label span {
 	margin-top 10%
 //.section-lider-toolTip
 .section-lider-Quote-title
+	+below(1440px)
+		font-size 14px
 	color white
 	font-family "Noto Sans"
 	font-size 18px
 	font-weight 700
 	line-height 24px
 .section-lider-Quote-text
+	+below(1440px)
+		font-size 12px
 	text-shadow 2px 3.5px 2px rgba(0, 0, 0, 0.42)
 	color white
 	font-family "Noto Sans"
@@ -835,8 +924,12 @@ input[type="checkbox"]:checked + label span {
 	margin-top 100px
 	+below(1600px)
 		margin-top 25px
-	
+	+below(1440px)
+		margin-top 4%
 .section-lider-toolTip
+	+below(1440px)
+		padding 5px 20px
+		bottom 5px
 	background-color rgba(0, 0, 0, 0.52)
 	border 2px solid white
 	border-radius 20px
@@ -846,6 +939,8 @@ input[type="checkbox"]:checked + label span {
 	left 30px
 	padding 20px 40px
 .section-lider-toolTip-title
+	+below(1440px)
+		font-size 14px
 	color white
 	font-family "Noto Sans"
 	font-size 18px
@@ -853,6 +948,9 @@ input[type="checkbox"]:checked + label span {
 	line-height 24px
 	text-align center
 .section-lider-toolTip-text
+	+below(1440px)
+		font-size 10px
+		margin 5px 0
 	color white
 	font-family "Noto Sans"
 	font-size 14px
@@ -876,8 +974,11 @@ input[type="checkbox"]:checked + label span {
 	bgi('bg-section-clients.jpg')
 	background-size cover
 	background-position: center top
-	padding-top 130px
-//.section-view
+	padding-top 110px
+	+below(1440px)
+		padding-top 90px
+.section-view
+	height 100vh	
 .section-clients-title
 	+below(1400px)
 		margin-bottom 30px
@@ -895,17 +996,18 @@ input[type="checkbox"]:checked + label span {
 .section-clients-el
 	+below(1400px)
 		.section-clients-el-bot
-			font-size 12px!important
-			height 100px
+			font-size 10px!important
+			height 60px
+			line-height 16px	
 		.section-clients-el-top
-			height 300px
+			height 230px
 	tr(all)
 	width 20%
 	&:nth-child(1)
 		.section-clients-el-bot,
 		.section-clients-el-top-text
 			width 100%
-			padding-left 75px !important
+			padding-left 55px !important
 	&:hover
 		cursor pointer
 		img
@@ -926,10 +1028,9 @@ input[type="checkbox"]:checked + label span {
 		-webkit-filter: grayscale(100%);
 		filter: gray;
 		filter: grayscale(100%);
-		filter: url(/img/desaturate.svg#css_dark);
+		//filter: url(/img/desaturate.svg#css_dark);
 	
 .section-clients-el-bot
-	
 	background maingreen
 	color white
 	font-family "Noto Sans"
@@ -958,15 +1059,19 @@ input[type="checkbox"]:checked + label span {
 		+below(1500px)
 			margin-bottom 10px
 			line-height 22px
+			font-size 10px	
 		
 .section-clients-form-wrap
 	width 100%
 	flex(mid)
-	margin-top 40px
+	margin-top 50px
 	+below(1600px)
 		margin-top 25px
-		
+	+below(1440px)
+		margin-top 50px
 .section-tarifs
+	+below(1440px)
+		padding-top 80px	
 	position relative
 	bgi('bg-section-tarif.jpg')
 	background-size cover
@@ -985,6 +1090,8 @@ input[type="checkbox"]:checked + label span {
 .section-tarifs-slider
 	flex(mid)
 .section-tarifs-slider-row
+	+below(1440px)
+		margin-top 30px	
 	width 100%
 	display: flex;
 	justify-content: center;
@@ -999,6 +1106,8 @@ input[type="checkbox"]:checked + label span {
 	box-shadow 0 0 7px rgba(0, 0, 0, 0.35)
 	width 18%
 .section-tarifs-slider-title
+	+below(1440px)
+		height 60px	
 	height 100px
 	padding-left 30px
 	background white
@@ -1008,6 +1117,8 @@ input[type="checkbox"]:checked + label span {
 	font-weight 700
 	line-height 24px
 .section-tarifs-slider-cont
+	+below(1440px)
+		padding 10px 20px
 	padding 30px
 	background-color #293437
 
@@ -1022,6 +1133,8 @@ input[type="checkbox"]:checked + label span {
 		font-weight 700
 		line-height 24px
 .section-tarifs-slider-check
+	+below(1400px)
+		margin-top 10px
 	margin-top 50px
 .section-tarifs-slider-but
 	width 100%
@@ -1045,22 +1158,28 @@ input[type="checkbox"]:checked + label span {
 	font-weight 400
 	color white
 	text-align center
-	+below(1400px)
+	+below(1440px)
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-flow: column;
-		
+		margin 15px 0
 	span
+		+below(1440px)
+			font-size 22px	
 		font-size 30px
 		font-weight 700
 		margin 0 10px
 .section-tarifs-select
+	+below(1440px)
+		margin 15px 0
 	margin 30px 0
 	select 
 		width 100%
 		
 .section-tarifs-slider-title-envers
+	+below(1440px)
+		height 60px	
 	height 100px
 	padding-left 30px
 	background white
@@ -1082,10 +1201,12 @@ input[type="checkbox"]:checked + label span {
 		flex-flow column
 	
 .section-tarifs-slider-cont-enverse-arrow
+	+below(1440px)
+		margin 40px 0
 	margin 60px 0
 	
 .section-tarifs-slider-cont-small
-	+below(1400px)
+	+below(1440px)
 		font-size 11px
 	font-family "Noto Sans"
 	font-size 18px
@@ -1125,6 +1246,8 @@ input[type="checkbox"]:checked + label span {
 	
 .section-tarifs-select
 	.dropdown
+		+below(1440px)
+			padding 0	
 		width 100%
 		background none
 		border 1px solid white
