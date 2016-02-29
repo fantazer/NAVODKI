@@ -34,5 +34,9 @@
     "vinyl-ftp": "^0.4.4",
     "gulp-newer": "*"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.3.0"
+    
+  }
 }

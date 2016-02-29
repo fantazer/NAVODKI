@@ -28,19 +28,34 @@ var imageminMozjpeg = require('imagemin-mozjpeg');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cached');
 var newer = require('gulp-newer');
+var sprity = require('sprity');
 
 
 // ########## make img ###############
+
+// generate sprite.png and _sprite.scss 
+gulp.task('sprites', function () {
+  return sprity.src({
+    src: 'app/img/sprite/*.png',
+    style: '_sprite.styl',
+     cssPath: './img/sprite/',
+     processor: 'slylus'
+  })
+  .pipe(gulpif('*.png', gulp.dest('app/img/'), gulp.dest('app/css/')))
+});
+
+
 gulp.task('imagePng',function(){
- return gulp.src('app/img/*.png')
-     .pipe(newer('dist/img/'))
+ return gulp.src('app/img/bg-section-main.png')
+     //.pipe(newer('dist/img/'))
      .pipe(imagemin({
          progressive: true,
          svgoPlugins: [{removeViewBox: false}],
-         use: [pngquant({quality: '70', speed: 11})]
+         use: [pngquant({quality: '70', speed: 4})]
      }))
      .pipe(gulp.dest('dist/img/'));
  });
+
 
 gulp.task('imageJpg',function(){
   return gulp.src('app/img/*.jpg')
@@ -48,7 +63,7 @@ gulp.task('imageJpg',function(){
   .pipe(imagemin({
           progressive: true,
           svgoPlugins: [{removeViewBox: false}],
-          use: [imageminMozjpeg({quality: '70', speed: 11})]
+          use: [imageminMozjpeg({quality: '50', speed: 11})]
       }))
   .pipe(gulp.dest('dist/img/'));
 });
@@ -204,7 +219,7 @@ gulp.task('see',function(){
 //default
 gulp.task('img',['imagePng' , 'imageJpg']);
 gulp.task('default', ['serve','see']);
-gulp.task('build',['sourcemaps','copy:font','prefix','img','make']);
+gulp.task('build',['sourcemaps','copy:font','prefix','make']);
 gulp.task('fast-build',['stylus','prefix','jade','copy:js','ftp']);
 
 

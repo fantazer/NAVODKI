@@ -1,25 +1,48 @@
 /* ###### init skrol to point  ######*/
 /* ###### bower i page-scroll-to-id  ######*/
-/*(function($){
+(function($){
     $(window).load(function(){
         $("a[rel='m_PageScroll2id']").mPageScroll2id({
-				    offset:200
+				  highlightClass:"left-nav-el-active"
+				});
+				 $("a[rel='m_PageScroll2id']").mPageScroll2id({
+				  highlightClass:"left-nav-el-active"
 				});
     });
- })(jQuery);*/ 
+ })(jQuery); 
 
 $(document).ready(function(){
-	var numberUser = $('.section-main-title-number').text();
-	var arrNumber = [];
-	for (var i = 0; i < numberUser.length; i++) {
-    arrNumber[i] = numberUser.charAt(i);
-	}
-	$('.section-main-title-number').empty();
-	arrNumber.forEach(function(item){
-		$('.section-main-title-number')
-		.append('<span class="section-main-title-number-el">'+item+ ' </span>')
+
+	//modal
+	$('.section-main-form button').click(function(){
+		$('.section-modal').bPopup({
+	 			closeClass:'section-modal-but',
+				position:['auto','auto'],
+				follow: [true,false],
+	 	}); 
 	})
 
+
+	$('.section-view').css('height',$(window).height())
+	$(window).resize(function(){
+		$('.section-view').css('height',$(window).height())
+	});
+
+	var numberUserBlock = function(a){
+		var numberUser = $(a).text();
+		var arrNumber = [];
+		for (var i = 0; i < numberUser.length; i++) {
+	    arrNumber[i] = numberUser.charAt(i);
+		}
+		$(a).empty();
+		arrNumber.forEach(function(item){
+			$(a)
+			.append('<span class="section-main-title-number-el">'+item+ ' </span>')
+		})
+	}
+
+numberUserBlock('.section-main-title-number');
+numberUserBlock('.section-about-number');
 
 	$('.section-main-video').on('click', function(ev) {
  
@@ -28,6 +51,20 @@ $(document).ready(function(){
  		$('.section-main-video img').hide();
  		$('.section-main-video-filter').hide();
   });
+
+	//animate logo
+	$(window).scroll(function(){
+		var needUpSpace = 800;
+		var upSpace = $(this).scrollTop();
+		var a = $(".top-menu-logo").css('width')
+		if ( upSpace >= 800 && a == "0px") {$(".top-menu-logo").stop().animate({'width':'200'},500)};
+		if ( upSpace < 800 && a == "200px") {$(".top-menu-logo").stop().animate({'width':'0'},500)};
+	})
+
+	//Tooltip
+	$('.section-time-quote-bottom-link').click(function(){
+		$('.section-time-quote-tooltip').toggleClass('hidden');
+	})
 	/* ###### init bpopup  ######*/
 	/* ###### bower i bpopup  ######*/
 	// $('.button-modal').click(function(){
@@ -43,17 +80,29 @@ $(document).ready(function(){
 	/* ###### init OwlCarousel2  ######*/
 	/*!!! add class owlCarousel !!!*/
 	/* ###### bower i OwlCarousel2 ######*/
-	// $("#owl-example").owlCarousel({
-	//  	items : 1,
-	//  	margin:50,
-	//  	autoHeight : true,
-	//  	pagination : false,
-	//  	autoPlay : true,
-	//  	singleItem:true,
-	//  	nav:true,
-	// 		navText:['<i class="fa fa-arrow-circle-o-left"></i>','<i class="fa fa-arrow-circle-o-right"></i>']
-	//  	}
-	//  ); 	
+	$(".section-about-slider").owlCarousel({
+	 	center: true,
+    items:1,
+	 	autoHeight : true,
+	 	pagination : true,
+	 	autoPlay : true,
+	 	nav:true,
+			navText:['<img src="img/nav-left.png">','<img src="img/nav-right.png">']
+	 	}
+	 ); 	
+
+
+	$(".section-tarifs-slider").owlCarousel({
+	 	center: true,
+    items:1,
+	 	autoHeight : true,
+	 	pagination : true,
+	 	autoPlay : true,
+	 	nav:true,
+			navText:['<img src="img/nav-left.png">','<img src="img/nav-right.png">']
+	 	}
+	 ); 
+
 
 	/* ###### init validate form  ######*/
 	/* ###### bower i jquery-validation ######*/
