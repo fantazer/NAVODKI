@@ -23,10 +23,10 @@ $(document).ready(function(){
 	})
 
 
-	// $('.section-view').css('height',$(window).height())
-	// $(window).resize(function(){
-	// 	$('.section-view').css('height',$(window).height())
-	// });
+	$('.section-view').css('height',$(window).height())
+	$(window).resize(function(){
+		$('.section-view').css('height',$(window).height())
+	});
 	console.log($(window).height()	)
 	console.log($(window).width()	)
 	var numberUserBlock = function(a){
